@@ -1,8 +1,218 @@
-<body style="background: #1e1e1e; color: #00ff00; font-family: monospace; text-align: center; padding: 50px;">
-    <h1>🛰️ Dashboard de Telemetría dinosauriesco te amo ponguita</h1>
-    <p>Segunda prueba de despliegue exitosa.</p>
-    <div style="border: 2px solid #00ff00; display: inline-block; padding: 20px;">
-        ID Sistema: 001-AZ <br>
-        Estado: <span style="color: lime;">ONLINE</span>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinoPedia 🦖 Cloud Demo</title>
+    <style>
+        /* --- ESTILOS CSS (El "maquillaje" de la página) --- */
+        :root {
+            --primary: #2c3e50; /* Azul oscuro */
+            --secondary: #27ae60; /* Verde Jurásico */
+            --background: #ecf0f1; /* Gris claro */
+            --text: #34495e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 0.5rem 0 0;
+            opacity: 0.8;
+            font-size: 1rem;
+        }
+
+        /* Contenedor Principal */
+        main {
+            flex: 1;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Cuadrícula de Tarjetas */
+        .dino-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Estilo de cada Tarjeta */
+        .dino-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dino-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Imagen del Dino (Usando placeholders con emojis) */
+        .dino-image {
+            height: 200px;
+            background-color: #bdc3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+        }
+
+        /* Info del Dino */
+        .dino-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .dino-info h2 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .dino-tag {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .dino-info p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #7f8c8d;
+        }
+
+        /* Botón de acción */
+        .dino-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-sizing: border-box;
+        }
+
+        .dino-btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--primary);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.85rem;
+            margin-top: auto;
+        }
+
+        /* Adaptación para pantallas pequeñas */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .dino-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DinoPedia 🦖</h1>
+        <p>Una demo de diseño responsivo desplegada en la Nube</p>
+    </header>
+
+    <main>
+        <div class="dino-grid">
+
+            <div class="dino-card">
+                <div class="dino-image" style="background-color: #27ae60;">🦖</div>
+                <div class="dino-info">
+                    <h2>Tyrannosaurus Rex</h2>
+                    <span class="dino-tag">Cretácico</span>
+                    <p>El "rey de los lagartos tiranos". Fue uno de los mayores carnívoros terrestres que han existido. Vivió en lo que hoy es Norteamérica.</p>
+                </div>
+                <button class="dino-btn" onclick="alert('¡Rawr! Cuidado con sus dientes.')">Más info</button>
+            </div>
+
+            <div class="dino-card">
+                <div class="dino-image" style="background-color: #e67e22;">🦕</div>
+                <div class="dino-info">
+                    <h2>Brachiosaurus</h2>
+                    <span class="dino-tag">Jurásico</span>
+                    <p>Un gigante de cuello largo. A diferencia de otros, sus patas delanteras eran más largas que las traseras, como una jirafa.</p>
+                </div>
+                <button class="dino-btn" onclick="alert('¡Cuidado! Está comiendo de la copa del árbol.')">Más info</button>
+            </div>
+
+            <div class="dino-card">
+                <div class="dino-image" style="background-color: #2980b9;">🛡️</div>
+                <div class="dino-info">
+                    <h2>Triceratops</h2>
+                    <span class="dino-tag">Cretácico</span>
+                    <p>Famoso por sus tres cuernos y su gran gola ósea. Era un herbívoro robusto que vivió al mismo tiempo que el T-Rex.</p>
+                </div>
+                <button class="dino-btn" onclick="alert('¡Un escudo viviente!')">Más info</button>
+            </div>
+
+            <div class="dino-card">
+                <div class="dino-image" style="background-color: #c0392b;">🦅</div>
+                <div class="dino-info">
+                    <h2>Velociraptor</h2>
+                    <span class="dino-tag">Cretácico</span>
+                    <p>Más pequeño que en las películas, pero muy ágil e inteligente. Tenía una garra retráctil en forma de hoz en cada pie.</p>
+                </div>
+                <button class="dino-btn" onclick="alert('¡Son rápidos y cazan en manada!')">Más info</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Desplegado con ❤️ usando Vercel + GitHub | Clase de Nube 2026</p>
+    </footer>
+
 </body>
+</html>
